@@ -1,5 +1,7 @@
-import React, { Component } from 'react';
-import './MovieItem.css';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import "./MovieItem.css";
+import { addFavoriteList } from "../../redux/actions";
 
 class MovieItem extends Component {
     render() {
