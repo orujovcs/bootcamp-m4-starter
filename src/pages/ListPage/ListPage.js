@@ -1,15 +1,17 @@
-import React, { Component } from 'react';
-import './ListPage.css';
+import React, { Component } from "react";
+import "./ListPage.css";
+import { connect } from "react-redux";
+import { getList, getMovieInfoByImdbID } from "../../redux/actions";
+import Header from "../../components/Header/Header";
 
 class ListPage extends Component {
     state = {
-        movies: [
-            { title: 'The Godfather', year: 1972, imdbID: 'tt0068646' }
-        ]
-    }
+        isClicked: false,
+    };
     componentDidMount() {
         const id = this.props.match.params;
         console.log(id);
+        this.props.getList(id);
         // TODO: запрос к сервер на получение списка
         // TODO: запросы к серверу по всем imdbID
     }
