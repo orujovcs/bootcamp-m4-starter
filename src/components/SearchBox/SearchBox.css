@@ -22,7 +22,6 @@
     margin-top: 17px;
     padding: 5px 10px;
     border: none;
-    transition: all 0.2s linear;
     color: #ffeedb;
     background-color: rgba(0, 8, 7);
   }
@@ -30,7 +29,6 @@
   .search-box__form-submit:hover:not(:disabled) {
     opacity: 0.8;
     cursor: pointer;
-    transition: all 0.2s linear;
     background-color: #ffeedb;
     color: rgba(0, 8, 7);
   }

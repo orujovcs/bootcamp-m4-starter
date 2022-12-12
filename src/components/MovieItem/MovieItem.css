@@ -21,11 +21,9 @@
     padding: 10px 15px;
     color: #FFEEDB;
     font-size: 14px;
-    transition: all 0.2s linear;
 }
 
 .movie-item__add-button:hover {
     cursor: pointer;
     opacity: 0.9;
-    transition: all 0.2s linear;
 }

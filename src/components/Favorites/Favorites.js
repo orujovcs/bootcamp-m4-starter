@@ -31,6 +31,7 @@ class Favorites extends Component {
           value={title}
           className="favorites__name"
           onChange={this.favoriteChangeHandler}
+          placeholder="Введите название списка"
           disabled={!this.props.favoriteList.length}
         />
         <ul className="favorites__list">
@@ -57,7 +58,7 @@ class Favorites extends Component {
             className="favorites__save"
             onClick={this.saveListHandler}
             disabled={!this.state.title.length}
-            
+
           >
             Сохранить список
           </button>

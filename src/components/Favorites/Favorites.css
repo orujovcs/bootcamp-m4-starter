@@ -32,7 +32,6 @@
   .favorites__save:hover {
     cursor: pointer;
     opacity: 0.9;
-    transition: all 0.2s linear;
   }
   .remove-favorite-movie {
     margin-right: 10px;
