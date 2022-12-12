@@ -51,7 +51,8 @@ export function postList(title, favoritesIDArray) {
         .then((res) => res.json())
         .then((data) => {
             dispatch(registerFavoriteList(data.id));
-        });
+        })
+        .catch((err) => console.log(err));
     };
 }
 
@@ -72,7 +73,8 @@ export function getList(id) {
         .then((data) => {
             dispatch(getListIntoState(data.title, data.movies));
             dispatch(getMovieInfoByImdbID(data.movies));
-        });
+        })
+        .catch((err) => console.log(err));
     };
 }
 export function getMovieInfoToState(movieDetails) {
@@ -92,7 +94,8 @@ export function getMovieInfoByImdbID(movies) {
             .then((data) => {
                 movieDetailsArray = [...movieDetailsArray, { ...data }];
                 dispatch(getMovieInfoToState(movieDetailsArray));
-            });
+            })
+            .catch((err) => console.log(err));
         });
     };
 }
@@ -104,6 +107,7 @@ export function fetchMovies(name) {
         .then((res) => res.json())
         .then((data) => {
             dispatch(searchMoveis(data.Search));
-        });
+        })
+        .catch((err) => console.log(err));
     };
 }

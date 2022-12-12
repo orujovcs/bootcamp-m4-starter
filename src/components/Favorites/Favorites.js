@@ -12,6 +12,14 @@ class Favorites extends Component {
   };
   favoriteChangeHandler = (e) => {
     this.setState({ title: e.target.value });
+    console.log(document.querySelector(".favorites__name").value);
+    if(document.querySelector(".favorites__name").value.length > 0){
+      document.querySelector(".favorites__save").style.backgroundColor = "#496ddb";
+      document.querySelector(".favorites__save").style.cursor = "pointer";
+    }
+    if(document.querySelector(".favorites__name").value.length === 0){
+      document.querySelector(".favorites__save").style.backgroundColor = "gray";
+    }
   };
   getImdbIDArray = () => {
     let favoritesIDArray = this.props.favoriteList.map((item) => {
@@ -31,6 +39,7 @@ class Favorites extends Component {
           value={title}
           className="favorites__name"
           onChange={this.favoriteChangeHandler}
+          onClick={this.favoriteChangeHandler}
           placeholder="Введите название списка"
           disabled={!this.props.favoriteList.length}
         />
@@ -58,7 +67,6 @@ class Favorites extends Component {
             className="favorites__save"
             onClick={this.saveListHandler}
             disabled={!this.state.title.length}
-
           >
             Сохранить список
           </button>

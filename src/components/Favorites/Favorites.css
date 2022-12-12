@@ -23,16 +23,16 @@
   
   .favorites__save {
     border: none;
-    background-color: #496ddb;
+    background-color: gray;
     padding: 10px 15px;
     color: #ffeedb;
     font-size: 14px;
+
   }
-  
+/*   
   .favorites__save:hover {
-    cursor: pointer;
     opacity: 0.9;
-  }
+  } */
   .remove-favorite-movie {
     margin-right: 10px;
     background-color: white;
