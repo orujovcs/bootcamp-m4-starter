@@ -99,8 +99,8 @@ export function getMovieInfoByImdbID(movies) {
 
 export function fetchMovies(name) {
     return function (dispatch) {
-        const api = "8d1d9e0f";
-        fetch(`http://www.omdbapi.com/?s=${name}&apikey=${api}`)
+        const apiKey = "8d1d9e0f";
+        fetch(`http://www.omdbapi.com/?s=${name}&apikey=${apiKey}`)
         .then((res) => res.json())
         .then((data) => {
             dispatch(searchMoveis(data.Search));

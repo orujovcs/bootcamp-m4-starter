@@ -56,6 +56,7 @@ class Favorites extends Component {
             type="button"
             className="favorites__save"
             onClick={this.saveListHandler}
+            disabled={false}
           >
             Сохранить список
           </button>
