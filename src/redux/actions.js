@@ -8,7 +8,7 @@ export function searchMoveis(movies) {
 }
 export function fetchMovies(name) {
     return function(dispatch){
-        const apiKey = "fdd591c8";
+        const apiKey = "8d1d9e0f";
         fetch(`http://www.omdbapi.com/?s=${name}&apikey=${apiKey}`)
         .then((res) => res.json())
         .then((data) => {
