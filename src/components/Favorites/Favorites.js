@@ -31,7 +31,7 @@ class Favorites extends Component {
           value={title}
           className="favorites__name"
           onChange={this.favoriteChangeHandler}
-          disabled={this.state.isSbm}
+          disabled={!this.props.favoriteList.length}
         />
         <ul className="favorites__list">
           {this.props.favoriteList.map((item) => {
@@ -56,7 +56,8 @@ class Favorites extends Component {
             type="button"
             className="favorites__save"
             onClick={this.saveListHandler}
-            disabled={false}
+            disabled={!this.state.title.length}
+            
           >
             Сохранить список
           </button>

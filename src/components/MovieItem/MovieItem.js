@@ -20,7 +20,7 @@ class MovieItem extends Component {
             <img className="movie-item__poster" src={Poster} alt={Title} />
             <div className="movie-item__info">
                 <h3 className="movie-item__title">
-                {Title}&nbsp;({Year})
+                {Title} ({Year})
                 </h3>
                 <button
                 type="button"
@@ -30,7 +30,7 @@ class MovieItem extends Component {
                 }}
                 disabled={this.ifIdInFavorites(imdbID)}
                 >
-                {this.ifIdInFavorites(imdbID) ? `✓` : "Добавить в список"}
+                {this.ifIdInFavorites(imdbID) ? `✓ Добавлено` : "Добавить в список"}
                 </button>
             </div>
         </article>
