@@ -7,22 +7,12 @@ export function searchMoveis(movies) {
     };
 }
   
-export function fetchMovies(name) {
-    return function (dispatch) {
-        const api = "8d1d9e0f";
-        fetch(`http://www.omdbapi.com/?s=${name}&apikey=${api}`)
-        .then((res) => res.json())
-        .then((data) => {
-            dispatch(searchMoveis(data.Search));
-        });
-    };
-}
-  
+
 export function addFavoriteList(id) {
     return {
         type: "ADD_FAVORITE_FILM",
         payload: {
-        id: id,
+            id: id,
         },
     };
 }
@@ -31,11 +21,11 @@ export function removeMovieFromFavoriteList(id) {
     return {
         type: "REMOVE_MOVIE_FROM_FAVORITE_LIST",
         payload: {
-        id: id,
+            id: id,
         },
     };
 }
-  
+
 export function registerFavoriteList(listID) {
     return {
         type: "REGISTER_FAVORITES",
@@ -44,7 +34,7 @@ export function registerFavoriteList(listID) {
         },
     };
 }
-  
+
 export function postList(title, favoritesIDArray) {
     return function (dispatch) {
         let savedList = {
@@ -64,7 +54,7 @@ export function postList(title, favoritesIDArray) {
         });
     };
 }
-  
+
 export function getListIntoState(title, movies) {
     return {
         type: "GET_LIST_INTO_STATE",
@@ -74,7 +64,7 @@ export function getListIntoState(title, movies) {
         },
     };
 }
-  
+
 export function getList(id) {
     return function (dispatch) {
         fetch(`https://acb-api.algoritmika.org/api/movies/list/${id}`)
@@ -97,13 +87,23 @@ export function getMovieInfoByImdbID(movies) {
     return function (dispatch) {
         let movieDetailsArray = [];
         movies.forEach((e) => {
-        fetch(`http://www.omdbapi.com/?i=${e}&apikey=8d1d9e0f`)
+            fetch(`http://www.omdbapi.com/?i=${e}&apikey=8d1d9e0f`)
             .then((res) => res.json())
             .then((data) => {
-            movieDetailsArray = [...movieDetailsArray, { ...data }];
-            dispatch(getMovieInfoToState(movieDetailsArray));
+                movieDetailsArray = [...movieDetailsArray, { ...data }];
+                dispatch(getMovieInfoToState(movieDetailsArray));
             });
         });
     };
 }
-  
+
+export function fetchMovies(name) {
+    return function (dispatch) {
+        const api = "8d1d9e0f";
+        fetch(`http://www.omdbapi.com/?s=${name}&apikey=${api}`)
+        .then((res) => res.json())
+        .then((data) => {
+            dispatch(searchMoveis(data.Search));
+        });
+    };
+}

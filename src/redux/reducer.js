@@ -18,9 +18,7 @@ function reducer(state = initialState, action) {
         case "ADD_FAVORITE_FILM":
             const newState = { ...state };
             const id = action.payload.id;
-
             const match = newState.movies.find((item) => item.imdbID === id);
-
             if (match) {
                 newState.favoriteList = [...newState.favoriteList, { ...match }];
             }

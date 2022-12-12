@@ -4,10 +4,10 @@ import "./Movies.css";
 import { connect } from "react-redux";
 
 class Movies extends Component {
-    render() { 
-        return ( 
+    render() {
+        return (
             <ul className="movies">
-                {this.state.movies.map((movie) => (
+                {this.props.movies.map((movie) => (
                     <li className="movies__item" key={movie.imdbID}>
                         <MovieItem {...movie} />
                     </li>
@@ -18,9 +18,8 @@ class Movies extends Component {
 }
 
 const mapStateToProps = (state) => {
-    return {
-        movies: state.movies,
-    }
-}
- 
+  return {
+    movies: state.movies,
+  };
+};
 export default connect(mapStateToProps)(Movies);
