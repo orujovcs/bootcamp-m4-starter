@@ -50,6 +50,16 @@ class ListPage extends Component {
                   <div className="list-page__details-value">
                     <ul className="movie-item__info-list">
                       <li id="movie-item__info-item">
+                        <button className="movie-item__add-button link-imdb">
+                          <a
+                            href={`https://www.imdb.com/title/${item.imdbID}/`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="list-page__link-imdb"
+                          >
+                            see more on imdb
+                          </a>
+                        </button>
                       </li>
                     </ul>
                   </div>
