@@ -11,8 +11,6 @@ class ListPage extends Component {
     const id = this.props.match.params.id;
     console.log(id);
     this.props.getList(id);
-    // TODO: запрос к сервер на получение списка
-    // TODO: запросы к серверу по всем imdbID
   }
 
   render() {
@@ -51,11 +49,6 @@ class ListPage extends Component {
                   </div>
                   <div className="list-page__details-value">
                     <ul className="movie-item__info-list">
-                      {/* <li id="movie-item__info-item">
-                        <button className="movie-item__add-button link-imdb">
-                          Обзор
-                        </button>
-                      </li> */}
                       <li id="movie-item__info-item">
                         <button className="movie-item__add-button link-imdb">
                           <a
@@ -69,8 +62,6 @@ class ListPage extends Component {
                         </button>
                       </li>
                     </ul>
-                    {/* <p>{item.Plot}</p> */}
-                    {/* {this.state.isClicked ?  : null} */}
                   </div>
                 </div>
               </li>
