@@ -20,6 +20,19 @@ function reducer(state = intialState,action){
                 newState.favoriteList = [...newState.favoriteList, {...match}];
             }
             return newState;
+        
+        case "GET_MOVIE_INFO_INTO_STATE":
+            return {
+            ...state,
+            movieDetails: action.payload.movieDetails,
+            };
+
+        case "GET_LIST_INTO_STATE":
+            return {
+                ...state,
+                title: action.payload.title,
+                listMovies: action.payload.listMovies,
+            };
     }
 }
 
