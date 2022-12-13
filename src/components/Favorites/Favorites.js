@@ -11,14 +11,14 @@ class Favorites extends Component {
     title: "",
   };
   favoriteChangeHandler = (e) => {
-    this.setState({ title: e.target.value });
-    console.log(document.querySelector(".favorites__name").value);
-    if(document.querySelector(".favorites__name").value.length > 0){
-      document.querySelector(".favorites__save").style.backgroundColor = "#496ddb";
-      document.querySelector(".favorites__save").style.cursor = "pointer";
+    this.setState({ title: e.target.value });   
+    if(document.querySelector(`.${e.target.className}`).value.length > 0){
+      document.querySelector(`.${e.target.parentElement.className}`).querySelector(".favorites__save").style.backgroundColor = "#496ddb";
+      document.querySelector(`.${e.target.parentElement.className}`).querySelector(".favorites__save").style.cursor = "pointer";
     }
-    if(document.querySelector(".favorites__name").value.length === 0){
-      document.querySelector(".favorites__save").style.backgroundColor = "gray";
+    if(document.querySelector(`.${e.target.className}`).value.length === 0){
+      document.querySelector(`.${e.target.parentElement.className}`).querySelector(".favorites__save").style.backgroundColor = "gray";
+      document.querySelector(`.${e.target.parentElement.className}`).querySelector(".favorites__save").style.cursor = "not-allowed";
     }
   };
   getImdbIDArray = () => {
@@ -71,15 +71,13 @@ class Favorites extends Component {
             Сохранить список
           </button>
         ) : (
-          <button type="button" className="favorites__save">
             <Link
               to={"/list/" + this.props.listID}
               target="_blank"
               className="link-to__list"
             >
-              Перейти к выбранным фильмам
+              Перейти к списку
             </Link>
-          </button>
         )}
       </div>
     );

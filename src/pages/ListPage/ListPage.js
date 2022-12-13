@@ -15,9 +15,9 @@ class ListPage extends Component {
 
   render() {
     console.log(this.props);
-    return (
-      <div className="list-page">
+    return (<>
         <Header />
+      <div className="list-page">
         <h1 className="list-page__title">{this.props.title}</h1>
         <ul>
           {this.props.movieDetails.map((item) => {
@@ -69,6 +69,7 @@ class ListPage extends Component {
           })}
         </ul>
       </div>
+      </>
     );
   }
 }

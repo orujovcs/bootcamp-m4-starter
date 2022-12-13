@@ -27,7 +27,7 @@
     padding: 10px 15px;
     color: #ffeedb;
     font-size: 14px;
-
+    cursor: not-allowed;
   }
 /*   
   .favorites__save:hover {
@@ -43,3 +43,6 @@
     background-color: #496ddb;
   }
   
+  .link-to__list{
+    color: blue;
+  }
