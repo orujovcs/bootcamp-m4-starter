@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 import "./Favorites.css";
 import { connect } from "react-redux";
 import { removeMovieFromFavoriteList, postList } from "../../redux/actions";
@@ -11,7 +10,7 @@ class Favorites extends Component {
     title: "",
   };
   favoriteChangeHandler = (e) => {
-    this.setState({ title: e.target.value });   
+    this.setState({ title: e.target.value });
     if(document.querySelector(`.${e.target.className}`).value.length > 0){
       document.querySelector(`.${e.target.parentElement.className}`).querySelector(".favorites__save").style.backgroundColor = "#496ddb";
       document.querySelector(`.${e.target.parentElement.className}`).querySelector(".favorites__save").style.cursor = "pointer";
@@ -19,6 +18,14 @@ class Favorites extends Component {
     if(document.querySelector(`.${e.target.className}`).value.length === 0){
       document.querySelector(`.${e.target.parentElement.className}`).querySelector(".favorites__save").style.backgroundColor = "gray";
       document.querySelector(`.${e.target.parentElement.className}`).querySelector(".favorites__save").style.cursor = "not-allowed";
+    }
+    if(document.querySelectorAll(`.${e.target.className}`)[1]){
+      document.querySelector(`.main-page__favorites`).querySelector(".favorites__save").style.backgroundColor = "#496ddb";
+      document.querySelector(`.main-page__favorites`).querySelector(".favorites__save").style.cursor = "pointer";
+    }
+    if(document.querySelectorAll(`.${e.target.className}`)[1].value.length === 0){
+      document.querySelector(`.main-page__favorites`).querySelector(".favorites__save").style.backgroundColor = "gray";
+      document.querySelector(`.main-page__favorites`).querySelector(".favorites__save").style.cursor = "not-allowed";
     }
   };
   getImdbIDArray = () => {

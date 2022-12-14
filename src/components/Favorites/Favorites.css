@@ -29,10 +29,6 @@
     font-size: 14px;
     cursor: not-allowed;
   }
-/*   
-  .favorites__save:hover {
-    opacity: 0.9;
-  } */
   .remove-favorite-movie {
     margin-right: 10px;
     background-color: white;
